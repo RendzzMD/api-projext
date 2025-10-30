@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web API Vercel</title>
+  </head>
+  <body>
+    <h1>Website Lo Udah Jalan 😎</h1>
+    <button onclick="getData()">Ambil Data dari API</button>
+    <pre id="result"></pre>
+
+    <script>
+      async function getData() {
+        const res = await fetch("/api/data");
+        const json = await res.json();
+        document.getElementById("result").textContent = JSON.stringify(json, null, 2);
+      }
+    </script>
+  </body>
+</html>
